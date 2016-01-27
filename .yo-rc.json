@@ -1,0 +1,19 @@
+{
+  "generator-m-ionic": {
+    "answers": {
+      "appName": "memorable",
+      "appId": "com.memorable.project",
+      "ionicCss": true,
+      "bowerPackages": [],
+      "platforms": [
+        "ios",
+        "android"
+      ],
+      "plugins": [
+        "cordova-plugin-device",
+        "cordova-plugin-statusbar"
+      ],
+      "appModule": "memorable"
+    }
+  }
+}
