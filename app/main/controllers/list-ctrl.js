@@ -4,7 +4,7 @@ angular.module('main')
 
   $scope.itemsList = [];
 
-  servicePlaces.getPlacesNearBy().success(function (data) {
+  servicePlaces.getPlacesNearMeByCategory().success(function (data) {
 
     for (var i = 0; i < data.length; i++) {
       //  $scope.itemsList.push(data[i].place);

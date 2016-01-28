@@ -68,8 +68,15 @@ angular.module('main', [
 angular.module('main')
   .factory('servicePlaces', function serviceMap ($http) {
     return {
-      getPlaces: function () {
-        return $http.get('https://memorablebackend.herokuapp.com/api/places/1.300529/103.861990/3000');
+      getPlacesNearMeByCategory: function () {
+        return $http.get('https://memorablebackend.herokuapp.com/api/places/1.300529/103.861990/3000/category');
+        // 'https://memorablebackend.herokuapp.com/api/places/1.300529/103.861990/3000/category'
+      },
+      getPlacesByCategoryArea: function () {
+        return $http.get('https://memorablebackend.herokuapp.com/api/places/category/area');
+      },
+      getAreasNearMe: function () {
+        return $http.get('https://memorablebackend.herokuapp.com/api/places/1.300529/103.861990/distance/area');
         // 'https://memorablebackend.herokuapp.com/api/places/1.300529/103.861990/3000/area'
       }
     };
@@ -112,11 +119,12 @@ angular.module('main')
 
   $scope.itemsList = [];
 
-  servicePlaces.getPlaces().success(function (data) {
+  servicePlaces.getPlacesNearBy().success(function (data) {
 
     for (var i = 0; i < data.length; i++) {
       //  $scope.itemsList.push(data[i].place);
       $scope.itemsList.push({'name': data[i].doc.name});
+      // console.log(data[i]);
     }
   });
 
