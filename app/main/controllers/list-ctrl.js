@@ -9,6 +9,7 @@ angular.module('main')
     for (var i = 0; i < data.length; i++) {
       //  $scope.itemsList.push(data[i].place);
       $scope.itemsList.push({'name': data[i].doc.name});
+      // console.log(data[i]);
     }
   });
 
