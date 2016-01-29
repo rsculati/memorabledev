@@ -27,7 +27,7 @@ angular.module('main', [
       }
     })
     .state('main.categories', {
-      url: '/categories',
+      url: '/categories/:area',
       views: {
         'pageContent': {
           templateUrl: 'main/templates/categorie.html',

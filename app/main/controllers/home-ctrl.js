@@ -2,13 +2,15 @@
 angular.module('main')
 .controller('HomeCtrl', function ($state, $scope, $ionicHistory) {
 
-  $scope.changeState = function () {
+  $scope.nearme = 'nearme';
 
+
+  $scope.changeState = function (parameter)
     $ionicHistory.nextViewOptions({
       disableAnimate: true
     });
 
-    $state.go('main.categories');
+    $state.go('main.categories', { area: parameter });
   };
 
 });
