@@ -3,9 +3,10 @@ angular.module('main')
 .controller('HomeCtrl', function ($state, $scope, $ionicHistory) {
 
   $scope.nearme = 'nearme';
+  $scope.test = 'test';
 
-
-  $scope.changeState = function (parameter)
+  $scope.changeState = function (parameter) {
+    console.log(parameter);
     $ionicHistory.nextViewOptions({
       disableAnimate: true
     });

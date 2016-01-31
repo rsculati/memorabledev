@@ -27,7 +27,7 @@ angular.module('main', [
       }
     })
     .state('main.categories', {
-      url: '/categories',
+      url: '/categories/:area',
       views: {
         'pageContent': {
           templateUrl: 'main/templates/categorie.html',
@@ -107,9 +107,9 @@ angular.module('main')
 
 'use strict';
 angular.module('main')
-.controller('MenuCtrl', function ($log) {
+.controller('MenuCtrl', function () {
 
-  $log.log('Hello from your Controller: MenuCtrl in module main:. This is your controller:', this);
+  // $log.log('Hello from your Controller: MenuCtrl in module main:. This is your controller:', this);
 
 });
 
@@ -128,20 +128,22 @@ angular.module('main')
     }
   });
 
-
 });
 
 'use strict';
 angular.module('main')
 .controller('HomeCtrl', function ($state, $scope, $ionicHistory) {
 
-  $scope.changeState = function () {
+  $scope.nearme = 'nearme';
+  $scope.test = 'test';
 
+  $scope.changeState = function (parameter) {
+    console.log(parameter);
     $ionicHistory.nextViewOptions({
       disableAnimate: true
     });
 
-    $state.go('main.categories');
+    $state.go('main.categories', { area: parameter });
   };
 
 });
@@ -184,7 +186,9 @@ angular.module('main')
 
 'use strict';
 angular.module('main')
-.controller('CategoriesCtrl', function ($state, $scope, $ionicHistory) {
+.controller('CategoriesCtrl', function ($state, $scope, $ionicHistory, $stateParams) {
+
+  console.log($stateParams.area);
 
   $scope.changeState = function () {
 

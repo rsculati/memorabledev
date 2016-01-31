@@ -1,18 +1,35 @@
-<ion-view view-title="List">
+<ion-view view-title="List" >
   <ion-content>
-
     <!-- content goes here -->
     <ion-list>
-      <ion-item
-        class="item-remove-animate item-avatar item-icon-right"
-        type="item-text-wrap"
-        ui-sref="main.listDetail">
-        <img src="main/assets/images/yo@2x.png">
-        <h2>Mr. Yo</h2>
-        <p>Learn more...</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
-      </ion-item>
-    </ion-list>
+      <div ng-repeat="item in itemsList track by $index"
+                class="card"
+                ui-sref="main.listDetail">
+        <ion-item class="item item-divider dark-bg"
+                  type="item-text-wrap">
 
+                <h2>{{item.name}}</h2>
+
+        </ion-item>
+        <ion-item class="item item-divider light-bg"
+                  type="item-image">
+          <img class="full-image" src="./main/assets/images/ubud.jpg">
+        </ion-item>
+        <ion-item class="item item-divider light-bg"
+                  type="item-text-wrap">
+            <p>
+              <a href="#" class="subdued">posted by 8 sources</a>
+            </p>
+        </ion-item>
+      </div>
+    </ion-list>
+<!-- ng-style="{'height': '150px'}"
+<ion-item ng-repeat="item in itemsList track by $index"
+          class="item-remove-animate item-avatar item-icon-right"
+          type="item-text-wrap"
+          ui-sref="main.listDetail">
+
+                     <i class="icon ion-chevron-right icon-accessory"></i>
+-->
   </ion-content>
 </ion-view>
