@@ -49,7 +49,7 @@ angular.module('main', [
         views: {
           'pageContent': {
             templateUrl: 'main/templates/list-detail.html',
-            // controller: '<someCtrl> as ctrl'
+            controller: 'ListDetailCtrl as ctrl'
           }
         }
       })
